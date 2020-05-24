@@ -9,6 +9,9 @@ export class LicenseEntity {
     key: string;
 
     @Column()
+    time: number;
+
+    @Column()
     product_id: number;
 
     @Column()
