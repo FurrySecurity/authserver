@@ -5,6 +5,6 @@ export const router = express.Router({
     strict: true
 });
 
-router.get('/:username', (req: Request, res: Response) => {
+router.get('/user/:username', (req: Request, res: Response) => {
     userController.read(req, res);
 });

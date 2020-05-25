@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
-import { CrudController } from '../CrudController';
+import { CrudController } from '../../CrudController';
 import { getManager, AdvancedConsoleLogger } from 'typeorm';
 
-import { UserEntity } from '../../database/entity/user'
+import { UserEntity } from '../../../database/entity/user'
 
 export class LoginController extends CrudController {
     public create(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {

@@ -5,7 +5,7 @@ import path from 'path'
 
 import { PORT } from './config/constants';
 
-import { userRouter, loginRouter, registerRouter } from './routes';
+import { authRouter, userRouter, panelRouter } from './routes';
 
 import { createConnection, Connection } from 'typeorm';
 
@@ -16,15 +16,16 @@ createConnection(require(path.join(__dirname, '../ormconfig.json'))).then(connec
 
     app.use(express.json());
 
+    app.use('/api/auth', authRouter);
     app.use('/api/user', userRouter);
 
-    app.use('/api/auth/login', loginRouter);
-    app.use('/api/auth/register', registerRouter);
+    app.use('/panel', panelRouter);
 
     app.get('/', (req, res) => {
         res.render('pages/index');
     })
-
+    
+    /*
     app.get('/about', (req, res) => {
         res.render('pages/about');
     });
@@ -32,6 +33,7 @@ createConnection(require(path.join(__dirname, '../ormconfig.json'))).then(connec
     app.get('/panel/', (req, res) => {
         res.render('pages/panel/index');
     });
+    */
 
     app.use((res, req) => {
         req.json({ success: false, message: 'file not found on this server!' });
