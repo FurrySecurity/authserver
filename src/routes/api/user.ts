@@ -5,6 +5,6 @@ export const router = express.Router({
     strict: true
 });
 
-router.get('/user/:username', (req: Request, res: Response) => {
-    userController.read(req, res);
+router.post('/user/:username', (req: Request, res: Response) => {
+    userController.create(req, res);
 });

@@ -6,9 +6,9 @@ export const router = express.Router({
 });
 
 router.get('/login/:email/:password', (req: Request, res: Response) => {
-    loginController.read(req, res);
+    loginController.create(req, res);
 });
 
 router.get('/register/:email/:username/:password', (req: Request, res: Response) => {
-    registerController.read(req, res);
+    registerController.create(req, res);
 });

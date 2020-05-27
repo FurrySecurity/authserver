@@ -12,5 +12,14 @@ export class ProductEntity {
     description: string;
 
     @Column()
+    buyable: boolean;
+
+    @Column()
     price: number;
+
+    @Column()
+    subscription: boolean;
+
+    @Column()
+    expires: number;
 }

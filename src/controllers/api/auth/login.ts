@@ -22,9 +22,14 @@ export class LoginController extends CrudController {
 
                     if (password == user.password) {
                         res.json({ success: true, message: 'successfully logged in!' });
+
+                        req.session.uid = user.id;
+                        req.session.authenticated = true;
+
+                        req.session.save((error) => {});
                     }
                     else {
-                        res.json({ success: true, message: 'invalid password!' });
+                        res.json({ success: false, message: 'invalid password!' });
                     }
                 });
 
@@ -33,9 +38,14 @@ export class LoginController extends CrudController {
 
             if (password == user.password) {
                 res.json({ success: true, message: 'successfully logged in!' });
+
+                req.session.uid = user.id;
+                req.session.authenticated = true;
+
+                req.session.save((error) => {});
             }
             else {
-                res.json({ success: true, message: 'invalid password!' });
+                res.json({ success: false, message: 'invalid password!' });
             }
         });
     }

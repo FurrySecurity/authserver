@@ -25,7 +25,7 @@ export class RegisterController extends CrudController {
 
                         repository.save(new_user);
 
-                        res.json({ success: false, message: 'registered!' });
+                        res.json({ success: true, message: 'registered!' });
 
                         return;
                     }
