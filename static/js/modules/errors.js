@@ -18,7 +18,7 @@ function show_message(message, delay) {
 }
 
 export function hide_error() {
-    error_message.hide({duration: 250});
+    error_message.hide({ duration: 250 });
     error_timeout = null;
 }
 
@@ -42,12 +42,12 @@ function show_no_permission() {
     show_error('you do not have permission to perform this action', 0);
 }
 
-function show_not_found(type = "user") {
-    show_error(`${type} not found`);
+function show_not_found(type = 'user') {
+    show_error(type + ' not found');
 }
 
-export function parse_api_error(data, type = "user") {
-    console.log(`API error - ${data}`);
+export function parse_api_error(data, type = 'user') {
+    console.log('API error - ' + data);
 
     show_error(data.message);
 }

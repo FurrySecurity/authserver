@@ -114,16 +114,21 @@ $(() => {
         }, () => show_success('If an account with your email or username exists, a password reset link will be sent to your email', 0));
     }
 
+    var requests = {
+        login: do_login,
+        register: do_register,
+        recovery: do_recovery,
+        logout: do_logout
+    }
+
     function do_request(type) {
-        if (type === 'login')
-            do_login();
-        else if (type === 'register')
-            do_register();
-        else if (type === 'recovery')
-            do_recovery();
-        else if (type === 'logout')
-            do_logout();
-        else
+        var request = requests[type];
+
+        if (request === undefined) {
             console.log('invalid operation!');
+            return;
+        }
+
+        request();
     };
 });

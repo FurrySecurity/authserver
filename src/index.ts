@@ -47,7 +47,7 @@ createConnection(require(path.join(__dirname, '../ormconfig.json'))).then(connec
     app.get('/', (req, res) => {
         res.render('pages/index', { session: req.session });
     })
-    
+
     /*
     app.get('/about', (req, res) => {
         res.render('pages/about');
