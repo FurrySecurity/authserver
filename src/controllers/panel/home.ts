@@ -10,6 +10,11 @@ export class PanelHomeController extends CrudController {
     }
     
     public read(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
+        if (!req.session.authenticated) {
+            res.redirect('/panel/login');
+            return;
+        }
+
         res.render('pages/panel/index', { session: req.session });
     }
 
