@@ -2,6 +2,7 @@ import { UserController } from './api/user';
 
 import { LoginController } from './api/auth/login';
 import { RegisterController } from './api/auth/register';
+import { LogoutController } from './api/auth/logout';
 
 import { ShopBuyController } from './api/shop/buy';
 import { ShopGenerateController } from './api/shop/generate';
@@ -16,6 +17,7 @@ const userController = new UserController();
 
 const loginController = new LoginController();
 const registerController = new RegisterController();
+const logoutController = new LogoutController();
 
 const shopBuyController = new ShopBuyController();
 const shopGenerateController = new ShopGenerateController();
@@ -31,6 +33,7 @@ export {
 
     loginController,
     registerController,
+    logoutController,
 
     shopBuyController,
     shopGenerateController,

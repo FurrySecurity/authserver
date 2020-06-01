@@ -10,7 +10,7 @@ export class PanelRegisterController extends CrudController {
     }
 
     public read(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        res.render('pages/panel/register');
+        res.render('pages/panel/register', { session: req.session });
     }
 
     public update(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {

@@ -1,21 +1,23 @@
 import { Request, Response } from 'express';
-import { CrudController } from '../CrudController';
+import { CrudController } from '../../CrudController';
 import { getManager, AdvancedConsoleLogger } from 'typeorm';
 
-import { UserEntity } from '../../database/entity/user'
+import { UserEntity } from '../../../database/entity/user'
 
-export class PanelLoginController extends CrudController {
+export class LogoutController extends CrudController {
     public create(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        throw new Error("Method not implemented.");
+        req.session.destroy((error) => {
+            if (error) {
+                res.json({ success: false, message: 'failed to destroy session!' });
+            }
+            else {
+                res.json({ success: true, message: 'successfully logged out!' });
+            }
+        });
     }
 
     public read(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        if (req.session.authenticated) {
-            res.redirect('/panel/');
-            return;
-        }
-
-        res.render('pages/panel/login', { session: req.session });
+        throw new Error("Method not implemented.");
     }
 
     public update(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {

@@ -1,1 +1,41 @@
-login page
+<%- include('inc/header'); %>
+
+<div class="app-body">
+    <main class="main">
+        <div class="container" id="main-container" style="margin-top: 10px;">
+            <div id="main-content" class="col-sm-12 mt-md-5" style="display: none;">
+                <div class="text-center alert alert-danger col-sm-4 offset-sm-3" role="alert" id="error-message"
+                    style="display: none"></div>
+
+                <div class="row">
+                    <div class="offset-sm-3 col-sm-4">
+                        <div class="card card-body" id="login-box">
+                            <div class="card-title">
+                                <h3 class="text-center">login</h3>
+                                <hr />
+                            </div>
+
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="login-username"
+                                    placeholder="username or email">
+                            </div>
+
+                            <div class="form-group">
+                                <input class="form-control" type="password" id="login-password" placeholder="password">
+                            </div>
+
+                            <button id="login-button" type="submit" class="btn btn-outline-primary">
+                                login
+                            </button>
+
+                            <span class="mt-2" style="font-size: 12px; color: var(--fg-tertiary)">don't have an account?
+                                <a href="./register" id="register-toggle">register here</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<%- include('inc/footer'); %>

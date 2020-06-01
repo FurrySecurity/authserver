@@ -16,6 +16,8 @@ createConnection(require(path.join(__dirname, '../ormconfig.json'))).then(connec
 
     app.set('view engine', 'ejs');
 
+    app.use(express.static('static'));
+
     app.use(express.json());
     app.use(session({
         secret: 'secret_key_uwu',
@@ -34,10 +36,16 @@ createConnection(require(path.join(__dirname, '../ormconfig.json'))).then(connec
     app.use('/api/user', userRouter);
     app.use('/api/shop', shopRouter);
 
+    app.use('/panel/index', (req, res) => {
+        if (!req.session.authenticated) {
+            res.redirect('./login');
+        }
+    });
+
     app.use('/panel', panelRouter);
 
     app.get('/', (req, res) => {
-        res.render('pages/index');
+        res.render('pages/index', { session: req.session });
     })
     
     /*
@@ -51,7 +59,7 @@ createConnection(require(path.join(__dirname, '../ormconfig.json'))).then(connec
     */
 
     app.use((res, req) => {
-        req.json({ success: false, message: 'file not found on this server!' });
+        req.json({ success: false, message: 'file not found on this server!: ' + res.path });
     });
 
     app.listen(PORT, () => {
