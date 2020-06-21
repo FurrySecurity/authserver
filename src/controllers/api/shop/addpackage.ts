@@ -8,7 +8,7 @@ import { UserEntity } from '../../../database/entity/user';
 
 import * as moment from 'moment';
 
-export class ShopBuyController extends CrudController {
+export class ShopAddPackageController extends CrudController {
     public create(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
         if (!req.session.authenticated) {
             res.json({ success: false, 'message': 'forbidden' }).status(403);

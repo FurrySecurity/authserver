@@ -1,13 +1,16 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-export class ProductEntity {
+export class InviteEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column()
-    name: string;
+    key: string;
 
     @Column()
-    subscription: boolean;
+    redeemed: boolean;
+
+    @Column()
+    redeemer_id: number;
 }

@@ -1,8 +1,5 @@
 import { Request, Response } from 'express';
 import { CrudController } from '../../CrudController';
-import { getManager } from 'typeorm';
-
-import { UserEntity } from '../../../database/entity/user'
 
 export class SessionController extends CrudController {
     public create(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {

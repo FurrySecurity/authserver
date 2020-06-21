@@ -15,5 +15,5 @@ export class LicenseEntity {
     product_id: number;
 
     @Column()
-    redeemer_id: number; // UUID of redeemer 
+    redeemer_id: number; // UID of redeemer 
 }

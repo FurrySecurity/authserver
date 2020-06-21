@@ -1,15 +1,23 @@
 import express, { Request, Response } from 'express';
-import { shopBuyController, shopGenerateController, shopRedeemController } from '../../controllers';
+import { shopAddPackageController, shopAddProductController, shopBuyController, shopGenerateController, shopRedeemController } from '../../controllers';
 
 export const router = express.Router({
     strict: true
 });
 
-router.post('/redeem/:id', (req: Request, res: Response) => {
+router.get('/addpackage/:name/:product_id/:price/:buyable/:expires', (req: Request, res: Response) => {
     shopRedeemController.create(req, res);
 });
 
-router.post('/buy/:id', (req: Request, res: Response) => {
+router.get('/addproduct/:name/:subscription', (req: Request, res: Response) => {
+    shopRedeemController.create(req, res);
+});
+
+router.get('/redeem/:id', (req: Request, res: Response) => {
+    shopRedeemController.create(req, res);
+});
+
+router.get('/buy/:id', (req: Request, res: Response) => {
     shopBuyController.create(req, res);
 });
 
