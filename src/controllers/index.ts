@@ -14,7 +14,12 @@ import { ShopRedeemController } from './api/shop/redeem';
 
 import { PanelHomeController } from './panel/home'
 
+import { PanelCheatsController } from './panel/cheats';
+import { PanelCreditsController } from './panel/credits';
+
 import { PanelLoginController } from './panel/login'
+import { PanelLogoutController } from './panel/logout'
+import { PanelForgotController } from './panel/forgot'
 import { PanelRegisterController } from './panel/register'
 
 const loginController = new LoginController();
@@ -33,7 +38,12 @@ const profileController = new ProfileController();
 
 const panelHomeController = new PanelHomeController();
 
+const panelCheatsController = new PanelCheatsController();
+const panelCreditsController = new PanelCreditsController();
+
 const panelLoginController = new PanelLoginController();
+const panelLogoutController = new PanelLogoutController();
+const panelForgotController = new PanelForgotController();
 const panelRegisterController = new PanelRegisterController();
 
 export {
@@ -52,6 +62,12 @@ export {
     profileController,
 
     panelHomeController,
+
+    panelCheatsController,
+    panelCreditsController,
+
     panelLoginController,
+    panelLogoutController,
+    panelForgotController,
     panelRegisterController
 };

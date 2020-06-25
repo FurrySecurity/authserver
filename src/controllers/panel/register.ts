@@ -1,8 +1,7 @@
 import { Request, Response } from 'express';
 import { CrudController } from '../CrudController';
-import { getManager, AdvancedConsoleLogger } from 'typeorm';
 
-import { UserEntity } from '../../database/entity/user'
+const config = require('../../../config.json');
 
 export class PanelRegisterController extends CrudController {
     public create(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
@@ -10,7 +9,12 @@ export class PanelRegisterController extends CrudController {
     }
 
     public read(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        res.render('pages/panel/register', { session: req.session });
+        if (req.session.authenticated) {
+            res.redirect('/panel/index');
+            return;
+        }
+
+        res.render('pages/panel/register', { session: req.session, invites: config.invites });
     }
 
     public update(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {

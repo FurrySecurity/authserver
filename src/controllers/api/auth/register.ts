@@ -4,26 +4,28 @@ import { getManager } from 'typeorm';
 
 import { UserEntity } from '../../../database/entity/user'
 
+const config = require('../../../../config.json');
+
 export class RegisterController extends CrudController {
     public create(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
         const email: string = req.params['email'];
 
-        const repository = getManager().getRepository(UserEntity);
+        const userRepository = getManager().getRepository(UserEntity);
 
-        repository.findOne({ where: { email: email } }).then(user => {
+        userRepository.findOne({ where: { email: email } }).then(user => {
             if (user == undefined) {
                 const username = req.params['username'];
                 const password = req.params['password'];
 
-                repository.findOne({ where: { username: username } }).then(user => {
+                userRepository.findOne({ where: { username: username } }).then(user => {
                     if (user == undefined) {
-                        let new_user = repository.create();
+                        let new_user = userRepository.create();
 
                         new_user.email = email;
                         new_user.username = username;
                         new_user.password = password;
 
-                        repository.save(new_user);
+                        userRepository.save(new_user);
 
                         res.json({ success: true, message: 'registered!' });
 

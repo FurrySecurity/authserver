@@ -1,0 +1,189 @@
+<%- include('inc/head'); %>
+
+<body>
+  <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed">
+    <%- include('inc/sidebar'); %>
+    <%- include('inc/header'); %>
+
+    <main id="main-container">
+      <div class="bg-body-light">
+        <div class="content content-full">
+          <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+            <h1 class="flex-sm-fill h3 my-2">
+              Cheats
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="block">
+          <div class="block-header">
+            <h3 class="block-title">Status</h3>
+          </div>
+
+          <div class="block-content">
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped table-vcenter">
+                <thead>
+                  <tr>
+                    <th>Cheat Name</th>
+                    <th>Developer</th>
+                    <th>Last Updated</th>
+                    <th>Current Status</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td class="font-w600 font-size-sm">
+                      Tom Clancy's Rainbow Six Siege
+                    </td>
+                    <td class="font-w600 font-size-sm">User</td>
+                    <td class="font-w600 font-size-sm">Never</td>
+                    <td><span class="badge badge-danger">Detected</span></td>
+                  </tr>
+
+                  <tr>
+                    <td class="font-w600 font-size-sm">Apex Legends</td>
+                    <td class="font-w600 font-size-sm">User</td>
+                    <td class="font-w600 font-size-sm">Never</td>
+                    <td>
+                      <span class="badge badge-success">Undetected</span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="font-w600 font-size-sm">Rust</td>
+                    <td class="font-w600 font-size-sm">User</td>
+                    <td class="font-w600 font-size-sm">Never</td>
+                    <td><span class="badge badge-warning">Updating</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="block-header">
+            <h3 class="block-title">Browse</h3>
+          </div>
+
+          <div class="block-content">
+            <div class="row row-deck">
+              <div class="col-md-6 col-xl-3">
+                <div class="block">
+                  <div class="options-container">
+                    <img class="img-fluid options-item" src="/assets/media/photos/rainbow_six_siege.png"
+                      alt="Tom Clancy's Rainbow Six Siege" />
+
+                    <div class="options-overlay bg-black-75">
+                      <div class="options-overlay-content">
+                        <a class="btn btn-sm btn-light" href="javascript:void(0)">
+                          <i class="fa fa-plus text-success mr-1"></i> Add to
+                          cart
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="block-content">
+                    <div class="mb-2">
+                      <a class="h4" href="javascript:void(0)">Tom Clancy's Rainbow Six Siege</a>
+
+                      <div class="h4 font-w600 text-success">
+                        250 Credits
+                      </div>
+                    </div>
+
+                    <p class="font-size-sm text-muted">
+                      Add a product description
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-xl-3">
+                <div class="block">
+                  <div class="options-container">
+                    <img class="img-fluid options-item" src="/assets/media/photos/apex_legends.png" alt="Apex Legends" />
+
+                    <div class="options-overlay bg-black-75">
+                      <div class="options-overlay-content">
+                        <a class="btn btn-sm btn-light" href="javascript:void(0)">
+                          <i class="fa fa-plus text-success mr-1"></i> Add to
+                          cart
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="block-content">
+                    <div class="mb-2">
+                      <a class="h4" href="javascript:void(0)">Apex Legends</a>
+
+                      <div class="h4 font-w600 text-success">
+                        180 Credits
+                      </div>
+                    </div>
+
+                    <p class="font-size-sm text-muted">
+                      Add a product description
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-xl-3">
+                <div class="block">
+                  <div class="options-container">
+                    <img class="img-fluid options-item" src="/assets/media/photos/rust.png" alt="Rust" />
+
+                    <div class="options-overlay bg-black-75">
+                      <div class="options-overlay-content">
+                        <a class="btn btn-sm btn-light" href="javascript:void(0)">
+                          <i class="fa fa-plus text-success mr-1"></i> Add to
+                          cart
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="block-content">
+                    <div class="mb-2">
+                      <a class="h4" href="javascript:void(0)">Rust</a>
+
+                      <div class="h4 font-w600 text-success">
+                        300 Credits
+                      </div>
+                    </div>
+
+                    <p class="font-size-sm text-muted">
+                      Add a product description
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer id="page-footer" class="bg-body-light">
+      <div class="content py-3">
+        <div class="row font-size-sm">
+          <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-left">
+            &copy; <span data-toggle="year-copy"></span>. All rights reserved
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/assets/js/oneui.core.min.js"></script>
+  <script src="/assets/js/oneui.app.min.js"></script>
+</body>
+
+</html>

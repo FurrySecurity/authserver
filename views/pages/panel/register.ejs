@@ -1,47 +1,139 @@
-<%- include('inc/header'); %>
+<%- include('inc/head'); %>
 
-<div class="app-body">
-    <main class="main">
-        <div class="container" id="main-container" style="margin-top: 10px;">
-            <div id="main-content" class="col-sm-12 mt-md-5">
-                <div class="text-center alert alert-danger col-sm-4 offset-sm-3" role="alert" id="error-message" style="display: none"></div>
+<body>
+  <div id="page-container">
+    <main id="main-container">
+      <div class="bg-image">
+        <div class="hero-static bg-white-95">
+          <div class="content">
+            <div class="row justify-content-center">
+              <div class="col-md-8 col-lg-6 col-xl-4">
+                <div class="text-center alert alert-danger col-sm-4 offset-sm-3" role="alert" id="error-message"
+                  style="display: none"></div>
 
-                <div class="row">
-                    <div class="offset-sm-3 col-sm-4">
-                        <div class="card card-body" id="register-box">
-                            <div class="card-title">
-                                <h3 class="text-center">register</h3>
-                                <hr/>
-                            </div>
+                <div class="block block-themed block-fx-shadow mb-0">
+                  <div class="block-header bg-dark">
+                    <h3 class="block-title">Sign Up</h3>
 
-                            <div class="form-group">
-                                <input class="form-control" type="text" id="register-username" placeholder="username">
-                            </div>
+                    <div class="block-options">
+                      <a class="btn-block-option font-size-sm" href="javascript:void(0)" data-toggle="modal"
+                        data-target="#one-signup-terms">View Terms</a>
 
-                            <div class="form-group">
-                                <input class="form-control" type="text" id="register-email" placeholder="email">
-                            </div>
-
-                            <div class="form-group">
-                                <input class="form-control" type="password" id="register-password" placeholder="password">
-                            </div>
-
-                            <div class="form-group">
-                                <input class="form-control" type="password" id="confirm-password" placeholder="confirm password">
-                            </div>
-
-                            <button id="register-button" type="submit" class="btn btn-outline-primary">
-                                register
-                            </button>
-
-                            <span class="mt-2" style="font-size: 12px; color: var(--fg-tertiary);">already have an account?
-                                <a href="./login" class="login-toggle">login here</a></span>
-                        </div>
+                      <a class="btn-block-option" href="login" data-toggle="tooltip" data-placement="left"
+                        title="Login">
+                        <i class="fa fa-sign-in-alt"></i>
+                      </a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </main>
-</div>
+                  </div>
 
-<%- include('inc/footer'); %>
+                  <div class="block-content">
+                    <div class="p-sm-3 px-lg-4 py-lg-5">
+                      <h1 class="mb-2">Title</h1>
+
+                      <p>
+                        Please fill out the following details to create a new
+                        account.
+                      </p>
+
+                      <div class="py-3">
+                        <div class="form-group">
+                          <input type="text" class="form-control form-control-alt form-control-lg"
+                            id="register-username" name="username" placeholder="Username" />
+                        </div>
+
+                        <div class="form-group">
+                          <input type="email" class="form-control form-control-alt form-control-lg" id="register-email"
+                            name="emailAddress" placeholder="Email Address" />
+                        </div>
+
+                        <div class="form-group">
+                          <input type="password" class="form-control form-control-alt form-control-lg"
+                            id="register-password" name="password" placeholder="Password" />
+                        </div>
+
+                        <div class="form-group">
+                          <input type="password" class="form-control form-control-alt form-control-lg"
+                            id="register-password-confirmation" name="confirmPassword" placeholder="Confirm Password" />
+                        </div>
+
+                        <% if (invites) { %>
+                          <div class="form-group">
+                            <input type="text" class="form-control form-control-alt form-control-lg" id="register-invite"
+                              name="invitationCode" placeholder="Invitation Code" />
+                          </div>
+                        <% } %>
+
+                        <div class="form-group">
+                          <div class="custom-control custom-control-dark custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="register-agree"
+                              name="register-agree" />
+
+                            <label class="custom-control-label font-w400" for="register-agree">I agree to the</label>
+
+                            <a href="javascript:void(0)" data-toggle="modal" data-target="#one-signup-terms" data-toggle="modal">Terms & Conditions
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-md-6 col-xl-5">
+                          <button id="register-button" type="submit" class="btn btn-block btn-dark">
+                            Register
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content content-full font-size-sm text-muted text-center">
+            &copy; 2020. All rights reserved
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal fade" id="one-signup-terms" tabindex="-1" role="dialog" aria-labelledby="one-signup-terms"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-popout" role="document">
+      <div class="modal-content">
+        <div class="block block-themed block-transparent mb-0">
+          <div class="block-header bg-dark">
+            <h3 class="block-title">Terms &amp; Conditions</h3>
+
+            <div class="block-options">
+              <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
+                <i class="fa fa-fw fa-times"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="block-content">
+            <p>TODO:</p>
+          </div>
+
+          <div class="block-content block-content-full text-right border-top">
+            <button type="button" class="btn btn-sm btn-dark mr-2" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/oneui.core.min.js"></script>
+  <script src="/assets/js/oneui.app.min.js"></script>
+  <script src="/assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+</body>
+
+<footer>
+  <script src="/js/api.js" type="module"></script>
+</footer>
+
+</html>

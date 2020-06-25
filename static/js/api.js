@@ -36,7 +36,7 @@ $(() => {
     });
 
     function do_login() {
-        let username = $('#login-username').val();
+        let username = $('#login-email').val();
         let password = $('#login-password').val();
 
         if (username === '' || password === '') {
@@ -65,7 +65,8 @@ $(() => {
 
     function do_register() {
         let password = $('#register-password').val();
-        let confirm_password = $('#confirm-password').val();
+        let confirm_password = $('#register-password-confirmation').val();
+        let register_agree = $('#register-agree').is(':checked');
 
         if (password === '' || confirm_password === '') {
             show_error('username/passwords cannot be blank!');
@@ -77,28 +78,61 @@ $(() => {
             return;
         }
 
+        if (!register_agree) {
+            show_error('you are required to accept the terms & conditions!');
+            return;
+        }
+
         let email = $('#register-email').val();
         let username = $('#register-username').val();
+        let invitation = $('#register-invite').val();
 
-        apiRequest('api/auth/register/:email/:username/:password', [
-            {
-                name: 'email',
-                value: email
-            },
-            {
-                name: 'username',
-                value: username
-            },
-            {
-                name: 'password',
-                value: password
-            }
-        ], data => {
-            if (data.success)
-                show_success(data.message, 0);
-            else
-                parse_api_error(data);
-        });
+        if (invitation === undefined) {
+            apiRequest('api/auth/register/:email/:username/:password', [
+                {
+                    name: 'email',
+                    value: email
+                },
+                {
+                    name: 'username',
+                    value: username
+                },
+                {
+                    name: 'password',
+                    value: password
+                }
+            ], data => {
+                if (data.success)
+                    show_success(data.message, 0);
+                else
+                    parse_api_error(data);
+            });
+        }
+        else {
+            apiRequest('api/auth/register/:email/:username/:password/:invite', [
+                {
+                    name: 'email',
+                    value: email
+                },
+                {
+                    name: 'username',
+                    value: username
+                },
+                {
+                    name: 'password',
+                    value: password
+                },
+                {
+                    name: 'invite',
+                    value: invitation
+                }
+            ], data => {
+                if (data.success)
+                    show_success(data.message, 0);
+                else
+                    parse_api_error(data);
+            });
+        }
     }
 
     function do_logout() {

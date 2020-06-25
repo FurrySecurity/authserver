@@ -1,8 +1,5 @@
 import { Request, Response } from 'express';
 import { CrudController } from '../CrudController';
-import { getManager, AdvancedConsoleLogger } from 'typeorm';
-
-import { UserEntity } from '../../database/entity/user'
 
 export class PanelLoginController extends CrudController {
     public create(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
@@ -11,7 +8,7 @@ export class PanelLoginController extends CrudController {
 
     public read(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
         if (req.session.authenticated) {
-            res.redirect('/panel/');
+            res.redirect('/panel/index');
             return;
         }
 

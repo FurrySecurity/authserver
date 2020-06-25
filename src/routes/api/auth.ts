@@ -13,6 +13,10 @@ router.get('/register/:email/:username/:password', (req: Request, res: Response)
     registerController.create(req, res);
 });
 
+router.get('/register/:email/:username/:password/:invite', (req: Request, res: Response) => {
+    registerController.create(req, res);
+});
+
 router.get('/logout', (req: Request, res: Response) => {
     logoutController.create(req, res);
 });

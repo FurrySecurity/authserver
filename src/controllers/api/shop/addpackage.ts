@@ -19,73 +19,7 @@ export class ShopAddPackageController extends CrudController {
         const productRepository = getManager().getRepository(ProductEntity);
         const userRepository = getManager().getRepository(UserEntity);
 
-        packageRepository.findOne({ where: { id: req.params['id'] } }).then(product => {
-            if (product == undefined) {
-                res.json({ success: false, message: 'package doesn\'t exist!' });
-                return;
-            }
-
-            userRepository.findOne({ where: { id: req.session.uid } }).then(user => {
-                if (user == undefined) {
-                    res.json({ success: false, message: 'error reading user information!' });
-                    return;
-                }
-                
-                if (!product.buyable) {
-                    res.json({ success: false, message: 'package cannot be purchased!' });
-                    return;
-                }
-
-                if (user.credit < product.price) {
-                    res.json({ success: false, message: 'not enough balance to complete purchase!' });
-                    return;
-                }
-
-                user.credit -= product.price;
-
-                let expires = product.expires;
-
-                productRepository.findOne({ where: { id: product.product_id } }).then(product => {
-                    if (product == undefined) {
-                        res.json({ success: false, message: 'invalid package product id!' });
-                        return;
-                    }
-
-                    if (product.subscription) {
-                        let subscriptions = {};
-
-                        if (user.subscriptions != '') {
-                            subscriptions = JSON.parse(user.subscriptions);
-                        }
-        
-                        let subscription = subscriptions[product.id];
-        
-                        if (subscription == undefined) {
-                            subscription = {
-                                expires: moment.unix(moment.now()).add(expires, 'days').unix()
-                            }
-                        }
-                        else {
-                        let new_expires = subscription.expires > moment.now()
-                                ? moment.unix(subscription.expires).add(expires, 'days').unix()
-                                : moment.unix(moment.now()).add(expires, 'days').unix()
-        
-                            subscription = {
-                                expires: new_expires
-                            }
-                        }
-        
-                        subscriptions[product.id] = subscription;
-        
-                        user.subscriptions = JSON.stringify(subscriptions);
-                    }
-    
-                    userRepository.save(user);
-    
-                    res.json({ success: true, message: 'completed purchase successfully!' });
-                });
-            });
-        });
+        res.json({ success: false, message: 'failed to add package (api not implemented!)' });
     }
 
     public read(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {

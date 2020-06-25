@@ -1,0 +1,165 @@
+<%- include('inc/head'); %>
+
+<body>
+  <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed">
+    <%- include('inc/sidebar'); %>
+    <%- include('inc/header'); %>
+    
+    <header id="page-header">
+      <div class="content-header">
+        <div class="d-flex align-items-center">
+          <button type="button" class="btn btn-sm btn-dual mr-2 d-lg-none" data-toggle="layout"
+            data-action="sidebar_toggle">
+            <i class="fa fa-fw fa-bars"></i>
+          </button>
+
+          <button type="button" class="btn btn-sm btn-dual mr-2 d-none d-lg-inline-block" data-toggle="layout"
+            data-action="sidebar_mini_toggle">
+            <i class="fa fa-fw fa-ellipsis-v"></i>
+          </button>
+
+          <button type="button" class="btn btn-sm btn-dual d-sm-none" data-toggle="layout"
+            data-action="header_search_on">
+            <i class="si si-magnifier"></i>
+          </button>
+        </div>
+
+        <div class="d-flex align-items-center">
+          <div class="dropdown d-inline-block ml-2">
+            <button type="button" class="btn btn-sm btn-dual" id="page-header-user-dropdown" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <img class="rounded" src="assets/media/avatars/avatar10.jpg" alt="Header Avatar" style="width: 18px;" />
+
+              <span class="d-none d-sm-inline-block ml-1">User</span>
+
+              <i class="fa fa-fw fa-angle-down d-none d-sm-inline-block"></i>
+            </button>
+
+            <div class="dropdown-menu dropdown-menu-right p-0 border-0 font-size-sm"
+              aria-labelledby="page-header-user-dropdown">
+              <div class="p-3 text-center bg-primary">
+                <img class="img-avatar img-avatar48 img-avatar-thumb" src="assets/media/avatars/avatar10.jpg"
+                  alt="Header Avatar" />
+              </div>
+
+              <div class="p-2">
+                <h5 class="dropdown-header text-uppercase">User Options</h5>
+
+                <a class="dropdown-item d-flex align-items-center justify-content-between" href="settings.html">
+                  <span>Settings</span>
+
+                  <i class="si si-settings"></i>
+                </a>
+
+                <div role="separator" class="dropdown-divider"></div>
+
+                <h5 class="dropdown-header text-uppercase">Actions</h5>
+
+                <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                  <span>Log Out</span>
+
+                  <i class="si si-logout ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown d-inline-block ml-2">
+            <button type="button" class="btn btn-sm btn-dual" id="page-header-notifications-dropdown"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="si si-bell"></i>
+
+              <span class="badge badge-primary badge-pill">2</span>
+            </button>
+
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0 border-0 font-size-sm"
+              aria-labelledby="page-header-notifications-dropdown">
+              <div class="p-2 bg-primary text-center">
+                <h5 class="dropdown-header text-uppercase text-white">
+                  Notifications
+                </h5>
+              </div>
+
+              <ul class="nav-items mb-0">
+                <li>
+                  <a class="text-dark media py-2" href="javascript:void(0)">
+                    <div class="mr-2 ml-3">
+                      <i class="fa fa-fw fa-check-circle text-success"></i>
+                    </div>
+
+                    <div class="media-body pr-2">
+                      <div class="font-w600">Success notification</div>
+
+                      <small class="text-muted">0 min ago</small>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a class="text-dark media py-2" href="javascript:void(0)">
+                    <div class="mr-2 ml-3">
+                      <i class="fa fa-fw fa-times-circle text-danger"></i>
+                    </div>
+
+                    <div class="media-body pr-2">
+                      <div class="font-w600">
+                        Error notification
+                      </div>
+
+                      <small class="text-muted">0 min ago</small>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+
+              <div class="p-2 border-top">
+                <a class="btn btn-sm btn-light btn-block text-center" href="javascript:void(0)">
+                  <i class="fa fa-fw fa-arrow-down mr-1"></i> Load More..
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="page-header-loader" class="overlay-header bg-white">
+        <div class="content-header">
+          <div class="w-100 text-center">
+            <i class="fa fa-fw fa-circle-notch fa-spin"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-container">
+      <div class="bg-body-light">
+        <div class="content content-full">
+          <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+            <h1 class="flex-sm-fill h3 my-2">
+              My Tickets
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <p>TODO:</p>
+      </div>
+    </main>
+
+    <footer id="page-footer" class="bg-body-light">
+      <div class="content py-3">
+        <div class="row font-size-sm">
+          <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-left">
+            &copy; <span data-toggle="year-copy"></span>. All rights reserved
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/js/oneui.core.min.js"></script>
+  <script src="assets/js/oneui.app.min.js"></script>
+</body>
+
+</html>
