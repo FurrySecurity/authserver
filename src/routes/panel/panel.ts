@@ -6,7 +6,8 @@ import {
     panelLoginController,
     panelLogoutController,
     panelForgotController,
-    panelRegisterController
+    panelRegisterController,
+    panelSettingsController
  } from '../../controllers';
 
 export const router = express.Router({
@@ -39,4 +40,8 @@ router.get('/forgot', (req: Request, res: Response) => {
 
 router.get('/register', (req: Request, res: Response) => {
     panelRegisterController.read(req, res);
+});
+
+router.get('/settings', (req: Request, res: Response) => {
+    panelSettingsController.read(req, res);
 });

@@ -48,20 +48,8 @@ createConnection(require(path.join(__dirname, '../ormconfig.json'))).then(connec
         res.render('pages/index', { session: req.session });
     })
 
-    /*
-    app.get('/about', (req, res) => {
-        res.render('pages/about');
-    });
-
-    app.get('/panel/', (req, res) => {
-        res.render('pages/panel/index');
-    });
-    */
-
     app.use((res, req) => {
         req.render('pages/404');
-
-        // req.json({ success: false, message: 'file not found on this server!: ' + res.path }).status(404);
     });
 
     app.listen(PORT, () => {

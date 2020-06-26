@@ -21,6 +21,7 @@ import { PanelLoginController } from './panel/login'
 import { PanelLogoutController } from './panel/logout'
 import { PanelForgotController } from './panel/forgot'
 import { PanelRegisterController } from './panel/register'
+import { PanelSettingsController } from './panel/settings'
 
 const loginController = new LoginController();
 const registerController = new RegisterController();
@@ -45,6 +46,7 @@ const panelLoginController = new PanelLoginController();
 const panelLogoutController = new PanelLogoutController();
 const panelForgotController = new PanelForgotController();
 const panelRegisterController = new PanelRegisterController();
+const panelSettingsController = new PanelSettingsController();
 
 export {
     loginController,
@@ -69,5 +71,6 @@ export {
     panelLoginController,
     panelLogoutController,
     panelForgotController,
-    panelRegisterController
+    panelRegisterController,
+    panelSettingsController
 };

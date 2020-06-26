@@ -35,6 +35,20 @@ $(() => {
         do_request('recovery');
     });
 
+    {
+        var packages = document.querySelectorAll('*[id^="shop-package-"]');
+
+        for (var i = 0; i < packages.length; ++i) {
+            var id = '#' + packages[i].id;
+
+            $(id).click(e => {
+                e.preventDefault();
+        
+                do_purchase(id.substring('#shop-package-'.length));
+            });
+        }
+    }
+
     function do_login() {
         let username = $('#login-email').val();
         let password = $('#login-password').val();
@@ -146,6 +160,20 @@ $(() => {
             username: $('#recovery-username').val(),
             recaptcha: token
         }, () => show_success('If an account with your email or username exists, a password reset link will be sent to your email', 0));
+    }
+
+    function do_purchase(id) {
+        apiRequest('api/shop/buy/:id', [
+            {
+                name: 'id',
+                value: id
+            }
+        ], data => {
+            if (data.success)
+                show_success(data.message, 0);
+            else
+                parse_api_error(data);
+        });
     }
 
     var requests = {

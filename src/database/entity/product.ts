@@ -9,5 +9,11 @@ export class ProductEntity {
     name: string;
 
     @Column()
+    description: string;
+
+    @Column()
+    developer: string;
+
+    @Column()
     subscription: boolean;
 }
