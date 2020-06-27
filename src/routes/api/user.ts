@@ -10,6 +10,6 @@ router.get('/profile/:username', (req: Request, res: Response) => {
     infoController.create(req, res);
 });
 
-router.get('/info/:uid', (req: Request, res: Response) => {
+router.get('/info', (req: Request, res: Response) => {
     infoController.create(req, res);
 });

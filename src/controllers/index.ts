@@ -6,6 +6,7 @@ import { RegisterController } from './api/auth/register';
 import { LogoutController } from './api/auth/logout';
 import { SessionController } from './api/auth/session';
 
+import { ShopListController } from './api/shop/list'
 import { ShopAddPackageController } from './api/shop/addpackage';
 import { ShopAddProductController } from './api/shop/addproduct';
 import { ShopBuyController } from './api/shop/buy';
@@ -28,6 +29,7 @@ const registerController = new RegisterController();
 const logoutController = new LogoutController();
 const sessionController = new SessionController();
 
+const shopListController = new ShopListController();
 const shopAddPackageController = new ShopAddPackageController();
 const shopAddProductController = new ShopAddProductController();
 const shopBuyController = new ShopBuyController();
@@ -54,6 +56,7 @@ export {
     logoutController,
     sessionController,
 
+    shopListController,
     shopAddPackageController,
     shopAddProductController,
     shopBuyController,

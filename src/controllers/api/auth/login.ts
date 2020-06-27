@@ -11,6 +11,8 @@ export class LoginController extends CrudController {
 
         const repository = getManager().getRepository(UserEntity);
 
+        console.log(req.session);
+
         repository.findOne({ where: { email: email } }).then(user => {
             if (user == undefined) {
                 repository.findOne({ where: { username: email } }).then(user => {

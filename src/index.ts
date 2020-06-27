@@ -27,8 +27,7 @@ createConnection(require(path.join(__dirname, '../ormconfig.json'))).then(connec
         cookie: {
             path: '/',
             httpOnly: true,
-            secure: false,
-            maxAge: null
+            secure: false
         }
     }));
 
