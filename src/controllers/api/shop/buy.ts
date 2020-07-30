@@ -66,7 +66,7 @@ export class ShopBuyController extends CrudController {
                             }
                         }
                         else {
-                        let new_expires = subscription.expires > moment.now()
+                            let new_expires = subscription.expires > moment.now()
                                 ? moment.unix(subscription.expires).add(expires, 'days').unix()
                                 : moment.unix(moment.now()).add(expires, 'days').unix()
         
