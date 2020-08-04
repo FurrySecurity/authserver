@@ -5,7 +5,7 @@ import { getManager } from 'typeorm';
 import { UserEntity } from '../../../database/entity/user'
 
 export class ProfileController extends CrudController {
-    public create(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
+    public get(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
         const repository = getManager().getRepository(UserEntity);
 
         repository.findOne({ where: { username: req.params['username'] } }).then(user => {
@@ -18,15 +18,7 @@ export class ProfileController extends CrudController {
         });
     }
 
-    public read(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        throw new Error("Method not implemented.");
-    }
-
-    public update(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        throw new Error("Method not implemented.");
-    }
-
-    public delete(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
+    public post(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
         throw new Error("Method not implemented.");
     }
 }

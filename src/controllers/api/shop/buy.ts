@@ -9,7 +9,7 @@ import { UserEntity } from '../../../database/entity/user';
 import * as moment from 'moment';
 
 export class ShopBuyController extends CrudController {
-    public create(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
+    public get(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
         if (!req.session.authenticated) {
             res.json({ success: false, 'message': 'forbidden' }).status(403);
             return;
@@ -88,15 +88,7 @@ export class ShopBuyController extends CrudController {
         });
     }
 
-    public read(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        throw new Error("Method not implemented.");
-    }
-
-    public update(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        throw new Error("Method not implemented.");
-    }
-
-    public delete(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
+    public post(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
         throw new Error("Method not implemented.");
     }
 }

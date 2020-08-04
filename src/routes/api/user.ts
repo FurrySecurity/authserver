@@ -7,9 +7,9 @@ export const router = express.Router({
 });
 
 router.get('/profile/:username', (req: Request, res: Response) => {
-    infoController.create(req, res);
+    infoController.get(req, res);
 });
 
 router.get('/info', (req: Request, res: Response) => {
-    infoController.create(req, res);
+    infoController.get(req, res);
 });

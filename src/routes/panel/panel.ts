@@ -15,33 +15,33 @@ export const router = express.Router({
 });
 
 router.get('/', (req: Request, res: Response) => {
-    panelHomeController.read(req, res);
+    panelHomeController.get(req, res);
 });
 
 router.get('/cheats', (req: Request, res: Response) => {
-    panelCheatsController.read(req, res);
+    panelCheatsController.get(req, res);
 });
 
 router.get('/credits', (req: Request, res: Response) => {
-    panelCreditsController.read(req, res);
+    panelCreditsController.get(req, res);
 });
 
 router.get('/login', (req: Request, res: Response) => {
-    panelLoginController.read(req, res);
+    panelLoginController.get(req, res);
 });
 
 router.get('/logout', (req: Request, res: Response) => {
-    panelLogoutController.read(req, res);
+    panelLogoutController.get(req, res);
 });
 
 router.get('/forgot', (req: Request, res: Response) => {
-    panelForgotController.read(req, res);
+    panelForgotController.get(req, res);
 });
 
 router.get('/register', (req: Request, res: Response) => {
-    panelRegisterController.read(req, res);
+    panelRegisterController.get(req, res);
 });
 
 router.get('/settings', (req: Request, res: Response) => {
-    panelSettingsController.read(req, res);
+    panelSettingsController.get(req, res);
 });

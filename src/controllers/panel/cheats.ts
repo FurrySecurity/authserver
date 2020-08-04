@@ -6,11 +6,7 @@ import { PackageEntity } from '../../database/entity/package'
 import { ProductEntity } from '../../database/entity/product';
 
 export class PanelCheatsController extends CrudController {
-    public create(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        throw new Error("Method not implemented.");
-    }
-
-    public read(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
+    public get(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
         if (!req.session.authenticated) {
             res.redirect('/panel/login');
             return;
@@ -50,11 +46,7 @@ export class PanelCheatsController extends CrudController {
         });
     }
 
-    public update(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        throw new Error("Method not implemented.");
-    }
-
-    public delete(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
+    public post(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
         throw new Error("Method not implemented.");
     }
 }

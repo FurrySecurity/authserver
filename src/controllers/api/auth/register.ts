@@ -7,7 +7,7 @@ import { UserEntity } from '../../../database/entity/user'
 const config = require('../../../../config.json');
 
 export class RegisterController extends CrudController {
-    public create(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
+    public get(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
         const email: string = req.params['email'];
 
         const userRepository = getManager().getRepository(UserEntity);
@@ -42,15 +42,7 @@ export class RegisterController extends CrudController {
         });
     }
 
-    public read(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        throw new Error("Method not implemented.");
-    }
-
-    public update(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        throw new Error("Method not implemented.");
-    }
-
-    public delete(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
+    public post(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
         throw new Error("Method not implemented.");
     }
 }

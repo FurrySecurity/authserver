@@ -13,6 +13,9 @@ export class ProductEntity {
 
     @Column()
     developer: string;
+    
+    @Column()
+    status: number;
 
     @Column()
     subscription: boolean;

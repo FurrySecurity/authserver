@@ -42,7 +42,15 @@
                       <td class="font-w600 font-size-sm"><%= product.name %></td>
                       <td class="font-w600 font-size-sm"><%= product.developer %></td>
                       <td class="font-w600 font-size-sm">Never</td>
-                      <td><span class="badge badge-danger">Detected</span></td>
+                      <% if (product.status == 0) { %>
+                          <td><span class="badge badge-success">Undetected</span></td>
+                      <% } %>
+                      <% if (product.status == 1) { %>
+                        <td><span class="badge badge-info">Unknown</span></td>
+                      <% } %>
+                      <% if (product.status == 2) { %>
+                        <td><span class="badge badge-danger">Detected</span></td>
+                      <% } %>
                     </tr>
                   <% }); %>
                 </tbody>

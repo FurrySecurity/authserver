@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { CrudController } from '../../CrudController';
 
 export class LogoutController extends CrudController {
-    public create(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
+    public get(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
         req.session.destroy((error) => {
             if (error) {
                 res.json({ success: false, message: 'failed to destroy session!' });
@@ -13,15 +13,7 @@ export class LogoutController extends CrudController {
         });
     }
 
-    public read(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        throw new Error("Method not implemented.");
-    }
-
-    public update(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        throw new Error("Method not implemented.");
-    }
-
-    public delete(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
+    public post(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
         throw new Error("Method not implemented.");
     }
 }

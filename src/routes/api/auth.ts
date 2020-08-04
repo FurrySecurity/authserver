@@ -6,21 +6,21 @@ export const router = express.Router({
 });
 
 router.get('/login/:email/:password', (req: Request, res: Response) => {
-    loginController.create(req, res);
+    loginController.get(req, res);
 });
 
 router.get('/register/:email/:username/:password', (req: Request, res: Response) => {
-    registerController.create(req, res);
+    registerController.get(req, res);
 });
 
 router.get('/register/:email/:username/:password/:invite', (req: Request, res: Response) => {
-    registerController.create(req, res);
+    registerController.get(req, res);
 });
 
 router.get('/logout', (req: Request, res: Response) => {
-    logoutController.create(req, res);
+    logoutController.get(req, res);
 });
 
 router.get('/session', (req: Request, res: Response) => {
-    sessionController.create(req, res);
+    sessionController.get(req, res);
 });
