@@ -24,7 +24,7 @@ router.get('/addproduct/:name/:subscription', (req: Request, res: Response) => {
     shopAddProductController.get(req, res);
 });
 
-router.get('/redeem/:id', (req: Request, res: Response) => {
+router.get('/redeem/:key', (req: Request, res: Response) => {
     shopRedeemController.get(req, res);
 });
 

@@ -1,5 +1,9 @@
 import { Request, Response } from 'express';
 import { CrudController } from '../CrudController';
+import { getManager, AdvancedConsoleLogger } from 'typeorm';
+
+import { UserEntity } from '../../database/entity/user';
+import { userRouter } from '../../routes';
 
 export class PanelCreditsController extends CrudController {
     public get(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
@@ -8,7 +12,11 @@ export class PanelCreditsController extends CrudController {
             return;
         }
 
-        res.render('pages/panel/credits', { session: req.session });
+        const userRepository = getManager().getRepository(UserEntity);
+
+        userRepository.findOne({ where: { id: req.session.uid } }).then(user => {
+            res.render('pages/panel/credits', { session: req.session, credits: user.credit });
+        });
     }
 
     public post(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {

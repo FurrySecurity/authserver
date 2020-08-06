@@ -17,7 +17,42 @@
       </div>
 
       <div class="content">
-        <p>TODO:</p>
+        <div class="row">
+
+          <div class="col-md-6">
+            <div class="block">
+              <div class="block-header block-header-default">
+                <h3 class="block-title">Redeem</h3>
+              </div>
+
+              <div class="block-content">
+                <div class="row justify-content-center py-sm-3 py-md-5">
+                  <div class="col-sm-10 col-md-8">
+                    <div class="form-group">
+                      <h4>You currently have <%- credits %> credits</h4>
+                    </div>
+
+                    &nbsp;
+
+                    <div class="form-group">
+                      <label for="block-form1-password">Redeem voucher</label>
+                      <input type="password" class="form-control form-control-alt" id="voucherCode" name="voucherCode"
+                        placeholder="Enter your voucher code">
+                    </div>
+
+                    &nbsp;
+
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary mr-1 mb-3">
+                        <i class="fas fa-arrow-right mr-1"></i></i> Submit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 
@@ -35,5 +70,9 @@
   <script src="/assets/js/oneui.core.min.js"></script>
   <script src="/assets/js/oneui.app.min.js"></script>
 </body>
+
+<footer>
+  <script src="/js/api.js" type="module"></script>
+</footer>
 
 </html>
