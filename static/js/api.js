@@ -182,7 +182,9 @@ $(() => {
         });
     }
 
-    function do_redeem(coupon) {
+    function do_redeem() {
+        let coupon = $('#voucherCode').val();
+
         apiRequest('api/shop/redeem/:coupon', [
             {
                 name: 'coupon',
