@@ -47,7 +47,6 @@ function show_not_found(type = 'user') {
 }
 
 export function parse_api_error(data, type = 'user') {
-    console.log('API error - ' + data);
-
+    //  console.log('API error - ' + JSON.strinfdata);
     show_error(data.message);
 }

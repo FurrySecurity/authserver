@@ -35,6 +35,12 @@ $(() => {
         do_request('recovery');
     });
 
+    $('#redeem-button').click(e => {
+        e.preventDefault();
+
+        do_request('redeem');
+    });
+
     {
         var packages = document.querySelectorAll('*[id^="shop-package-"]');
 
@@ -176,11 +182,26 @@ $(() => {
         });
     }
 
+    function do_redeem(coupon) {
+        apiRequest('api/shop/redeem/:coupon', [
+            {
+                name: 'coupon',
+                value: coupon
+            }
+        ], data => {
+            if (data.success)
+                show_success(data.message, 0);
+            else
+                parse_api_error(data);
+        });
+    }
+
     var requests = {
         login: do_login,
         register: do_register,
         recovery: do_recovery,
-        logout: do_logout
+        logout: do_logout,
+        redeem: do_redeem
     }
 
     function do_request(type) {
