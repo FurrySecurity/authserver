@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<%- include('./inc/head.ejs') %>
+
+<body>
+  <div id="wrapper">
+    <div class="visible incoming" id="pageloader-overlay">
+      <div class="loader-wrapper-outer">
+        <div class="loader-wrapper-inner">
+          <div class="loader"></div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('inc/sidebar.ejs') %>
+
+    <header class="topbar-nav">
+      <%- include('inc/topbar.ejs') %>
+    </header>
+
+    <div class="clearfix"></div>
+
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        <div class="row pt-2 pb-2">
+          <div class="col-sm-9">
+            <h4 class="page-title">Points</h4>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-xl-12 my-3">
+            <div class="alert alert-outline-warning" role="alert">
+              <div class="text-center text-white my-3">
+                <span>You currently have <strong id="credits"><%= user.credit %></strong> m$</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title">Redeem Credit Voucher</div>
+
+              <a href="/">buy more vouchers!</a>
+
+              <hr />
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="voucher-code" placeholder="Enter your voucher code" />
+              </div>
+
+              <div class="form-group">
+                <button id="redeem-button" type="submit" class="btn btn-warning px-5">
+                  Redeem
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row pt-2 pb-2">
+          <div class="col-sm-9">
+            <h4 class="page-title">Products</h4>
+          </div>
+        </div>
+
+        <div class="row">
+          <% packages.forEach(package => { %>
+          <div class="col-12 col-lg-4 col-xl-4">
+            <div class="card rounded-0 bg-default">
+              <div class="card-body">
+                <h5 class="mb-0 text-center text-white">
+                  <%= package.name %>
+                </h5>
+
+                <h6 class="text-center text-white">External Cheat</h6>
+
+                <br>
+                <br>
+
+                <div class="text-center">
+                  <button id="shop-package-<%= package.id %>" type="submit" class="btn btn-warning px-5">
+                    Purchase <%= package.price %> m$
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+
+    <a class="back-to-top" href="#">
+      <i class="fa fa-angle-double-up"></i>
+    </a>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="text-center">
+          Copyright © 2020 <a href="#" class="text-warning">mangohack</a>.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/popper.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/sidebar-menu.js"></script>
+  <script src="/assets/js/app-script.js"></script>
+
+  <script src="/js/api.js" type="module"></script>
+</body>
+
+</html>

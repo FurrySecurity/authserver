@@ -35,7 +35,7 @@ export class ShopRedeemController extends CrudController {
                 userRepository.save(user);
                 couponRepository.save(coupon);
 
-                res.json({ success: false, message: 'succesfully redeemed ' + coupon.credits + ' credits!' });
+                res.json({ success: true, balance: user.credit, message: 'succesfully redeemed ' + coupon.credits + ' credits!' });
                 return;
             });
         });

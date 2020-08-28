@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand fixed-top" id="header-setting">
+    <ul class="navbar-nav mr-auto align-items-center">
+      <li class="nav-item">
+        <a class="nav-link toggle-menu" href="#">
+          <i class="icon-menu menu-icon"></i>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav align-items-center right-nav-link">
+      <li class="nav-item">
+        <a
+          class="nav-link dropdown-toggle dropdown-toggle-nocaret"
+          data-toggle="dropdown"
+          href="#"
+        >
+          <span class="user-profile">
+            <img
+              alt="user avatar"
+              class="img-circle"
+              src="https://via.placeholder.com/110x110"
+            />
+          </span>
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li class="dropdown-item user-details">
+            <a href="#">
+              <div class="media">
+                <div class="avatar">
+                  <img
+                    alt="user avatar"
+                    class="align-self-start mr-3"
+                    src="https://via.placeholder.com/110x110"
+                  />
+                </div>
+
+                <div class="media-body">
+                  <h6 class="mt-2 user-title"><%- user.username %></h6>
+
+                  <p class="user-subtitle"><%- user.email %></p>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="dropdown-divider"></li>
+
+          <li class="dropdown-item">
+            <a href="/panel/logout" class="text-white">
+              <i class="icon-power mr-2"></i> Log Out
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>

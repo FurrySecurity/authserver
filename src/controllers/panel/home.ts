@@ -16,7 +16,7 @@ export class PanelHomeController extends CrudController {
         const userRepository = getManager().getRepository(UserEntity);
 
         userRepository.findOne({ where: { id: req.session.uid } }).then(user => {
-            res.render('pages/panel/home', { session: req.session, credits: user.credit });
+            res.render('pages/panel/home', { session: req.session, user: { username: user.username, email: user.email, credit: user.credit } });
         });
     }
 

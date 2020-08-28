@@ -1,13 +1,12 @@
 import express, { Request, Response } from 'express';
 import {
     panelHomeController,
-    panelCheatsController,
-    panelCreditsController,
+    panelShopController,
+    panelStatusController,
     panelLoginController,
     panelLogoutController,
     panelForgotController,
     panelRegisterController,
-    panelSettingsController
  } from '../../controllers';
 
 export const router = express.Router({
@@ -18,12 +17,12 @@ router.get('/', (req: Request, res: Response) => {
     panelHomeController.get(req, res);
 });
 
-router.get('/cheats', (req: Request, res: Response) => {
-    panelCheatsController.get(req, res);
+router.get('/shop', (req: Request, res: Response) => {
+    panelShopController.get(req, res);
 });
 
-router.get('/credits', (req: Request, res: Response) => {
-    panelCreditsController.get(req, res);
+router.get('/status', (req: Request, res: Response) => {
+    panelStatusController.get(req, res);
 });
 
 router.get('/login', (req: Request, res: Response) => {
@@ -40,8 +39,4 @@ router.get('/forgot', (req: Request, res: Response) => {
 
 router.get('/register', (req: Request, res: Response) => {
     panelRegisterController.get(req, res);
-});
-
-router.get('/settings', (req: Request, res: Response) => {
-    panelSettingsController.get(req, res);
 });

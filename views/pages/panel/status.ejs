@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<%- include('./inc/head.ejs') %>
+
+<body>
+  <div id="wrapper">
+    <div class="visible incoming" id="pageloader-overlay">
+      <div class="loader-wrapper-outer">
+        <div class="loader-wrapper-inner">
+          <div class="loader"></div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('inc/sidebar.ejs') %>
+
+    <header class="topbar-nav">
+      <%- include('inc/topbar.ejs') %>
+    </header>
+
+    <div class="clearfix"></div>
+
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        <div class="row pt-2 pb-2">
+          <div class="col-sm-9">
+            <h4 class="page-title">Status</h4>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 my-2">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Products</h5>
+
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Developer</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <% products.forEach(product => { %>
+                      <tr>
+                        <th scope="row"><%- product.name %></th>
+                        <td><%- product.developer %></td>
+                       
+                        <% if (product.status == 0) { %>
+                          <td class="text-success">Undetected</td>
+                        <% } %>
+
+                        <% if (product.status == 1) { %>
+                          <td class="text-warning">Unknown</td>
+                        <% } %>
+                        
+                        <% if (product.status == 2) { %>
+                          <td class="text-danger">Detected</td>
+                        <% } %>
+                      </tr>
+                      <% }); %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a class="back-to-top" href="#">
+      <i class="fa fa-angle-double-up"></i>
+    </a>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="text-center">
+          Copyright © 2020 <a href="#" class="text-warning">mangohack</a>.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/popper.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/js/sidebar-menu.js"></script>
+  <script src="/assets/js/app-script.js"></script>
+</body>
+
+</html>

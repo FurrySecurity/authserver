@@ -82,7 +82,7 @@ export class ShopBuyController extends CrudController {
     
                     userRepository.save(user);
     
-                    res.json({ success: true, message: 'completed purchase successfully!' });
+                    res.json({ success: true, balance: user.credit, message: 'completed purchase successfully!' });
                 });
             });
         });

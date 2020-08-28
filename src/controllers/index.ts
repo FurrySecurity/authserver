@@ -15,14 +15,13 @@ import { ShopRedeemController } from './api/shop/redeem';
 
 import { PanelHomeController } from './panel/home'
 
-import { PanelCheatsController } from './panel/cheats';
-import { PanelCreditsController } from './panel/credits';
+import { PanelShopController } from './panel/shop';
+import { PanelStatusController } from './panel/status';
 
 import { PanelLoginController } from './panel/login'
 import { PanelLogoutController } from './panel/logout'
 import { PanelForgotController } from './panel/forgot'
 import { PanelRegisterController } from './panel/register'
-import { PanelSettingsController } from './panel/settings'
 
 const loginController = new LoginController();
 const registerController = new RegisterController();
@@ -41,14 +40,13 @@ const profileController = new ProfileController();
 
 const panelHomeController = new PanelHomeController();
 
-const panelCheatsController = new PanelCheatsController();
-const panelCreditsController = new PanelCreditsController();
+const panelShopController = new PanelShopController();
+const panelStatusController = new PanelStatusController();
 
 const panelLoginController = new PanelLoginController();
 const panelLogoutController = new PanelLogoutController();
 const panelForgotController = new PanelForgotController();
 const panelRegisterController = new PanelRegisterController();
-const panelSettingsController = new PanelSettingsController();
 
 export {
     loginController,
@@ -68,12 +66,11 @@ export {
 
     panelHomeController,
 
-    panelCheatsController,
-    panelCreditsController,
+    panelShopController,
+    panelStatusController,
 
     panelLoginController,
     panelLogoutController,
     panelForgotController,
-    panelRegisterController,
-    panelSettingsController
+    panelRegisterController
 };

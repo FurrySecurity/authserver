@@ -1,51 +1,47 @@
-<%- include('inc/head'); %>
+<!DOCTYPE html>
 
-<body>
-  <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed">
-    <%- include('inc/sidebar'); %>
-    <%- include('inc/header'); %>
+<html lang="en">
+  <%- include('./inc/head.ejs') %> 
 
-    <main id="main-container">
-      <div class="bg-body-light">
-        <div class="content content-full">
-          <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
-            <h1 class="flex-sm-fill h3 my-2">
-              Dashboard
-            </h1>
+  <body>
+    <div id="wrapper">
+      <div class="visible incoming" id="pageloader-overlay">
+        <div class="loader-wrapper-outer">
+          <div class="loader-wrapper-inner">
+            <div class="loader"></div>
           </div>
         </div>
       </div>
 
-      <div class="content">
-        <div class="row">
-          <div class="col-6 col-md-3 col-lg-6 col-xl-3">
-            <a class="block block-rounded block-link-pop border-left border-primary border-4x"
-              href="javascript:void(0)">
-              <div class="block-content block-content-full">
-                <div class="font-size-sm font-w600 text-uppercase text-muted">
-                  Credits
-                </div>
-                <div class="font-size-h2 font-w400 text-dark"><%= credits %> </div>
-              </div>
-            </a>
+      <%- include('inc/sidebar.ejs') %>
+
+      <header class="topbar-nav">
+        <%- include('inc/topbar.ejs') %> 
+      </header>
+
+      <div class="clearfix"></div>
+
+      <div class="content-wrapper">
+        <!-- TODO: -->
+      </div>
+
+      <a class="back-to-top" href="#">
+        <i class="fa fa-angle-double-up"></i>
+      </a>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="text-center">
+            Copyright © 2020 <a href="#" class="text-warning">mangohack</a>.
           </div>
         </div>
-      </div>
-    </main>
+      </footer>
+    </div>
 
-    <footer id="page-footer" class="bg-body-light">
-      <div class="content py-3">
-        <div class="row font-size-sm">
-          <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-left">
-            &copy; <span data-toggle="year-copy"></span>. All rights reserved
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
-
-  <script src="/assets/js/oneui.core.min.js"></script>
-  <script src="/assets/js/oneui.app.min.js"></script>
-</body>
-
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/sidebar-menu.js"></script>
+    <script src="/assets/js/app-script.js"></script>
+  </body>
 </html>

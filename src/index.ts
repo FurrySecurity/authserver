@@ -48,7 +48,7 @@ createConnection(require(path.join(__dirname, '../ormconfig.json'))).then(connec
     })
 
     app.use((res, req) => {
-        req.render('pages/404');
+        req.status(404).render('pages/404');
     });
 
     app.listen(PORT, () => {

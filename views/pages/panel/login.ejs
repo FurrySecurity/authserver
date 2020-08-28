@@ -1,85 +1,141 @@
-<%- include('inc/head'); %>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<body>
-  <div id="page-container">
-    <main id="main-container">
-      <div class="bg-image">
-        <div class="hero-static bg-white-95">
-          <div class="content">
-            <div class="row justify-content-center">
-              <div class="col-md-8 col-lg-6 col-xl-4">
-                <div class="block block-themed block-fx-shadow mb-0">
-                  <div class="block-header bg-dark">
-                    <h3 class="block-title">Sign In</h3>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-                    <div class="block-options">
-                      <a class="btn-block-option font-size-sm" href="forgot">Forgot Password?
-                      </a>
+    <title>mangohack</title>
 
-                      <a class="btn-block-option" href="register" data-toggle="tooltip" data-placement="left"
-                        title="Register">
-                        <i class="fa fa-user-plus"></i>
-                      </a>
-                    </div>
-                  </div>
+    <link href="/assets/images/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/app-style.css" rel="stylesheet" />
+  </head>
 
-                  <div class="block-content">
-                    <div class="p-sm-3 px-lg-4 py-lg-5">
-                      <h1 class="mb-2">Mangohack</h1>
+  <body>
+    <div id="pageloader-overlay" class="visible incoming">
+      <div class="loader-wrapper-outer">
+        <div class="loader-wrapper-inner">
+          <div class="loader"></div>
+        </div>
+      </div>
+    </div>
 
-                      <p>Welcome back, please login.</p>
-                      
-                      <div role="alert" class="alert alert-danger" id="error-message" style="display: none"></div>
+    <div id="wrapper">
+      <div class="loader-wrapper">
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
 
-                      <div class="py-3">
-                        <div class="form-group">
-                          <input type="text" class="form-control form-control-alt form-control-lg" id="login-email"
-                            name="email" placeholder="Email/Username" />
-                        </div>
+      <div class="card card-authentication1 mx-auto my-5">
+        <div class="card-body">
+          <div class="card-content p-2">
+            <div class="text-center">
+              <h2 class="mb-0">mangohack</h2>
+            </div>
 
-                        <div class="form-group">
-                          <input type="password" class="form-control form-control-alt form-control-lg" id="login-password"
-                            name="password" placeholder="Password" />
-                        </div>
+            <div class="card-title text-uppercase text-center py-3">Login</div>
 
-                        <div class="form-group">
-                          <div class="custom-control custom-control-dark custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="rememberMe" name="rememberMe" />
+            <div id="alert-box" class="alert alert-danger alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert">
+                ×
+              </button>
 
-                            <label class="custom-control-label font-w400" for="rememberMe">Remember Me</label>
-                          </div>
-                        </div>
-                      </div>
+              <div class="alert-icon">
+                <i class="fa fa-times"></i>
+              </div>
 
-                      <div class="form-group row">
-                        <div class="col-md-6 col-xl-5">
-                          <button id="login-button" type="submit" class="btn btn-block btn-dark">
-                            Login
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+              <div class="alert-message">
+                <span>Invalid username/password!</span>
+              </div>
+            </div>
+
+            <form>
+              <div class="form-group">
+                <label for="username" class="sr-only">Username</label>
+
+                <div class="position-relative has-icon-right">
+                  <input
+                    type="text"
+                    id="email"
+                    class="form-control input-shadow"
+                    placeholder="Username/Email"
+                  />
+
+                  <div class="form-control-position">
+                    <i class="icon-user"></i>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <div class="content content-full font-size-sm text-muted text-center">
-            &copy; <span data-toggle="year-copy"></span>. All rights reserved
+              <div class="form-group">
+                <label for="password" class="sr-only">Password</label>
+
+                <div class="position-relative has-icon-right">
+                  <input
+                    type="password"
+                    id="password"
+                    class="form-control input-shadow"
+                    placeholder="Password"
+                  />
+
+                  <div class="form-control-position">
+                    <i class="icon-lock"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <div class="icheck-material-warning">
+                    <input type="checkbox" id="remember-me" checked="" />
+
+                    <label for="remember-me">Remember Me</label>
+                  </div>
+                </div>
+
+                <div class="form-group col-6 text-right">
+                  <a href="reset-password" class="text-warning"
+                    >Reset Password</a
+                  >
+                </div>
+              </div>
+
+              <button id="login-button" type="button" class="btn btn-warning btn-block">
+                Login
+              </button>
+            </form>
           </div>
         </div>
+
+        <div class="card-footer text-center py-3">
+          <p class="mb-0">
+            Don't have an account?
+            <a href="register" class="text-warning">Register</a>
+          </p>
+        </div>
       </div>
-    </main>
-  </div>
 
-  <script src="/assets/js/oneui.core.min.js"></script>
-  <script src="/assets/js/oneui.app.min.js"></script>
-  <script src="/assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
-</body>
+      <a href="javaScript:void();" class="back-to-top"
+        ><i class="fa fa-angle-double-up"></i
+      ></a>
+    </div>
 
-<footer>
-  <script src="/js/api.js" type="module"></script>
-</footer>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/sidebar-menu.js"></script>
+    <script src="/assets/js/app-script.js"></script>
 
+    <script src="/js/api.js" type="module"></script>
+  </body>
 </html>

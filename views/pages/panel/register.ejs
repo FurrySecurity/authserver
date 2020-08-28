@@ -1,138 +1,170 @@
-<%- include('inc/head'); %>
+<!DOCTYPE html>
 
-<body>
-  <div id="page-container">
-    <main id="main-container">
-      <div class="bg-image">
-        <div class="hero-static bg-white-95">
-          <div class="content">
-            <div class="row justify-content-center">
-              <div class="col-md-8 col-lg-6 col-xl-4">
-                <div class="block block-themed block-fx-shadow mb-0">
-                  <div class="block-header bg-dark">
-                    <h3 class="block-title">Sign Up</h3>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-                    <div class="block-options">
-                      <a class="btn-block-option font-size-sm" href="javascript:void(0)" data-toggle="modal"
-                        data-target="#one-signup-terms">View Terms</a>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-                      <a class="btn-block-option" href="login" data-toggle="tooltip" data-placement="left"
-                        title="Login">
-                        <i class="fa fa-sign-in-alt"></i>
-                      </a>
-                    </div>
-                  </div>
+    <title>mangohack</title>
 
-                  <div class="block-content">
-                    <div class="p-sm-3 px-lg-4 py-lg-5">
-                      <h1 class="mb-2">Title</h1>
+    <link href="/assets/images/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/app-style.css" rel="stylesheet" />
+  </head>
 
-                      <p>
-                        Please fill out the following details to create a new
-                        account.
-                      </p>
-                      
-                      <div role="alert" class="alert alert-danger" id="error-message" style="display: none"></div>
-
-                      <div class="py-3">
-                        <div class="form-group">
-                          <input type="text" class="form-control form-control-alt form-control-lg"
-                            id="register-username" name="username" placeholder="Username" />
-                        </div>
-
-                        <div class="form-group">
-                          <input type="email" class="form-control form-control-alt form-control-lg" id="register-email"
-                            name="emailAddress" placeholder="Email Address" />
-                        </div>
-
-                        <div class="form-group">
-                          <input type="password" class="form-control form-control-alt form-control-lg"
-                            id="register-password" name="password" placeholder="Password" />
-                        </div>
-
-                        <div class="form-group">
-                          <input type="password" class="form-control form-control-alt form-control-lg"
-                            id="register-password-confirmation" name="confirmPassword" placeholder="Confirm Password" />
-                        </div>
-
-                        <% if (invites) { %>
-                          <div class="form-group">
-                            <input type="text" class="form-control form-control-alt form-control-lg" id="register-invite"
-                              name="invitationCode" placeholder="Invitation Code" />
-                          </div>
-                        <% } %>
-
-                        <div class="form-group">
-                          <div class="custom-control custom-control-dark custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="register-agree"
-                              name="register-agree" />
-
-                            <label class="custom-control-label font-w400" for="register-agree">I agree to the</label>
-
-                            <a href="javascript:void(0)" data-toggle="modal" data-target="#one-signup-terms" data-toggle="modal">Terms & Conditions
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="form-group row">
-                        <div class="col-md-6 col-xl-5">
-                          <button id="register-button" type="submit" class="btn btn-block btn-dark">
-                            Register
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="content content-full font-size-sm text-muted text-center">
-            &copy; 2020. All rights reserved
-          </div>
-        </div>
-      </div>
-    </main>
-  </div>
-
-  <div class="modal fade" id="one-signup-terms" tabindex="-1" role="dialog" aria-labelledby="one-signup-terms"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-popout" role="document">
-      <div class="modal-content">
-        <div class="block block-themed block-transparent mb-0">
-          <div class="block-header bg-dark">
-            <h3 class="block-title">Terms &amp; Conditions</h3>
-
-            <div class="block-options">
-              <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
-                <i class="fa fa-fw fa-times"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="block-content">
-            <p>TODO:</p>
-          </div>
-
-          <div class="block-content block-content-full text-right border-top">
-            <button type="button" class="btn btn-sm btn-dark mr-2" data-dismiss="modal">
-              Close
-            </button>
-          </div>
+  <body>
+    <div id="pageloader-overlay" class="visible incoming">
+      <div class="loader-wrapper-outer">
+        <div class="loader-wrapper-inner">
+          <div class="loader"></div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script src="/assets/js/oneui.core.min.js"></script>
-  <script src="/assets/js/oneui.app.min.js"></script>
-  <script src="/assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
-</body>
+    <div id="wrapper">
+      <div class="loader-wrapper">
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
 
-<footer>
-  <script src="/js/api.js" type="module"></script>
-</footer>
+      <div class="card card-authentication1 mx-auto my-5">
+        <div class="card-body">
+          <div class="card-content p-2">
+            <div class="text-center">
+              <h2>mangohack</h2>
+            </div>
 
+            <div class="card-title text-uppercase text-center py-3">
+              Register
+            </div>
+
+            <form>
+              <div class="form-group">
+                <label for="username" class="sr-only">Username</label>
+
+                <div class="position-relative has-icon-right">
+                  <input
+                    type="text"
+                    id="username"
+                    class="form-control input-shadow"
+                    placeholder="Username"
+                  />
+
+                  <div class="form-control-position">
+                    <i class="icon-user"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email-address" class="sr-only">Email Address</label>
+
+                <div class="position-relative has-icon-right">
+                  <input
+                    type="email"
+                    id="email-address"
+                    class="form-control input-shadow"
+                    placeholder="Email Address"
+                  />
+
+                  <div class="form-control-position">
+                    <i class="icon-envelope"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="password" class="sr-only">Password</label>
+
+                <div class="position-relative has-icon-right">
+                  <input
+                    type="password"
+                    id="password"
+                    class="form-control input-shadow"
+                    placeholder="Password"
+                  />
+
+                  <div class="form-control-position">
+                    <i class="icon-lock"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="confirm-password" class="sr-only"
+                  >Confirm Password</label
+                >
+
+                <div class="position-relative has-icon-right">
+                  <input
+                    type="password"
+                    id="confirm-password"
+                    class="form-control input-shadow"
+                    placeholder="Confirm Password"
+                  />
+
+                  <div class="form-control-position">
+                    <i class="icon-lock"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="invitation-code" class="sr-only"
+                  >Invitation Code</label
+                >
+
+                <div class="position-relative has-icon-right">
+                  <input
+                    type="text"
+                    id="invitation-code"
+                    class="form-control input-shadow"
+                    placeholder="Invitation Code"
+                  />
+
+                  <div class="form-control-position">
+                    <i class="icon-note"></i>
+                  </div>
+                </div>
+              </div>
+
+              <button id="register-button" type="button" class="btn btn-warning btn-block">
+                Register
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="card-footer text-center py-3">
+          <p class="mb-0">
+            Already have an account?
+            <a href="login" class="text-warning">Login</a>
+          </p>
+        </div>
+      </div>
+
+      <a href="javaScript:void();" class="back-to-top"
+        ><i class="fa fa-angle-double-up"></i
+      ></a>
+    </div>
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/sidebar-menu.js"></script>
+    <script src="/assets/js/app-script.js"></script>
+
+    <script src="/js/api.js" type="module"></script>
+  </body>
 </html>

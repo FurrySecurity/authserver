@@ -56,8 +56,8 @@ $(() => {
     }
 
     function do_login() {
-        let username = $('#login-email').val();
-        let password = $('#login-password').val();
+        let username = $('#email').val();
+        let password = $('#password').val();
 
         if (username === '' || password === '') {
             show_error('username/password cannot be blank!');
@@ -175,15 +175,18 @@ $(() => {
                 value: id
             }
         ], data => {
-            if (data.success)
+            if (data.success) {
+                document.getElementById('credits').textContent = data.balance;
+
                 show_success(data.message, 0);
+            }
             else
                 parse_api_error(data);
         });
     }
 
     function do_redeem() {
-        let coupon = $('#voucherCode').val();
+        let coupon = $('#voucher-code').val();
 
         apiRequest('api/shop/redeem/:coupon', [
             {
@@ -191,8 +194,13 @@ $(() => {
                 value: coupon
             }
         ], data => {
-            if (data.success)
+            if (data.success) {
+                console.dir(data);
+
+                document.getElementById('credits').textContent = data.balance;
+            
                 show_success(data.message, 0);
+            }
             else
                 parse_api_error(data);
         });
